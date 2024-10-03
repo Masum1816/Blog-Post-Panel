@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .background{
+            width: 100%;
+            height: 1000px;
+            background-color: bisque;
+        }
+        .text{
+            text-align: center;
+            font-family: fantasy;
+        }
+        .userName{
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+    <% if (users && users.length > 0) { %>
+        <ul>
+            <% users.forEach(function(user) { %>
+                <div class="user-card">
+                    <div class="user-card-content">
+                        <h2 class="user-name text userName">Name : <%= user.name %></h2>
+                        <h2 class="user-email text">Email : <%= user.email %></h2>
+                    </div>
+                </div>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p class="text userName">No users found</p>
+    <% } %>
+    </div>
+</body>
+</html>
